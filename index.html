@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!--<meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />-->
+    <!--<meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />-->
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <title>Jellyfish Fact Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="background">
+        <div id="factsection">
+            <div id="icon">
+                <img src="images\jellyfish.gif" width="50px" height="50px">
+            </div>
+            <div id="factbox">
+                <p id="fact">i am the fact</p>
+                <button id="heartbutton" onclick="heartfact()" width="10px" height="10px"><img src="images\heartbutton.png" width="20px" height="20px"/></button>
+            </div>
+        </div>
+        <div id="buttonsection">
+            <button id="factbutton" onclick="changefact()">click me!</button>
+        </div>
+      </div>
+        <div id="favouritesection">
+          <p>Favourited Facts:</p>
+          <p id="favouritelist"></p>
+        </div>
+    </div>
+  </body>
+  <script>
+    //fact class
+    class Fact {
+      constructor(factcontent, factdesc) {
+        this.content = factcontent;
+        this.desc = factdesc;
+        this.isFavourited = false;
+      }
+    };
+
+    //fact initialisation
+    fact1 = new Fact("Jellyfish have been around for over 500 million years.", "Jellyfish Age");
+    fact2 = new Fact("Jellyfish are 95% water!", "Jellyfish Water");
+    fact3 = new Fact("Jellyfish bodies are made up of only 3 layers - the outer epidermis, the mesoglea (gelatinous layer in the middle), and the inner gastrodermis (lines the gut cavity). This means they have no brains, hearts, or lungs!", "Jellyfish Bodies");
+    fact4 = new Fact("Instead of bones, jellyfish have bells with fluid and muscles.", "Jellyfish bones")
+    fact5 = new Fact("When jellyfish want to move, they squirt water in the opposite direction they want to go in to propel themselves. Of course, it's much easier to drift with the ocean's currents.", "Jellyfish Movements");
+    fact6 = new Fact("The largest species of jellyfish is called the lion's mane, which can have tentacles as long as 36 meters!", "Lion's Mane");
+    fact7 = new Fact("The immortal jellyfish (Turritopsis Dohrnii) can drop to the seabed if it's injured or in water that's the wrong temperature and become a baby jellyfish again!", "Immortal Jellyfish");
+    fact8 = new Fact("Jellyfish begin as a polyp, then grow into an ephyra, and finally into an adult medusa.", "Jellyfish Life Stages");
+    fact9 = new Fact("Box jellyfish are different to other jellyfish types in that they have eyes that can see (instead of just sensing light). In fact, with their 24 eyes, they have 360 degree vision!", "Box Jellyfish");
+    fact10 = new Fact("Jellyfish are part of the phylum Cnidaria alongside species such as corals and sea anemones.", "Jellyfish Phylum");
+
+    const jellyfishfacts = [fact1, fact2, fact3, fact4, fact5, fact6, fact7, fact8, fact9, fact10];
+    let factchoice = Math.floor(Math.random() * jellyfishfacts.length);
+    let currentfact = jellyfishfacts[factchoice];
+    document.getElementById("fact").innerHTML = currentfact.content;
+    //sets up the first random fact
+
+    document.getElementById("factbutton").addEventListener("click", changefact());
+
+    function changefact() {
+      let factchoice = Math.floor(Math.random() * jellyfishfacts.length);
+      currentfact = jellyfishfacts[factchoice];
+      document.getElementById("fact").innerHTML = currentfact.content;
+    };
+    //button works
+
+    let favouritedfacts = [];
+    function editFavourite(heartedfact, todo) {
+      if (todo == "add") {
+          if (!favouritedfacts.includes(heartedfact)) {
+            favouritedfacts.push(heartedfact);
+            document.getElementById("favouritelist").innerHTML = (favouritedfacts.map(f => f.desc).join(", "));
+            return true;
+          };
+      } else if (todo == "delete") {
+        for (let i = 0; i < favouritedfacts.length; i++) {
+          if (favouritedfacts[i] == heartedfact) {
+            let index = favouritedfacts.indexOf(heartedfact);
+            favouritedfacts.splice(index, 1);
+            document.getElementById("favouritelist").innerHTML = (favouritedfacts.map(f => f.desc).join(", "));
+            return true;
+          };
+        };
+        return false;
+      };
+    };
+
+    function heartfact() {
+      if (currentfact.isFavourited == true) {
+        currentfact.isFavourited = false;
+        editFavourite(currentfact, "delete");
+      } else if (currentfact.isFavourited == false) {
+        currentfact.isFavourited = true;
+        editFavourite(currentfact, "add");
+      };
+    };
+
+</script>
+</html>
+
+<!-- make the button generate randomly /
+    add heart emoji /
+    create list of favouritedfacts, add when heart emoji clicked, delete when heart emoji unclicked /
+    favourites button bottom right corner, click to reveal list of favourited facts
+    graphics
+-->
