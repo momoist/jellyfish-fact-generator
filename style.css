@@ -3,18 +3,14 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    height: 310px;
-}
-
-#background {
-    width: 100%;
-    height: 268px;
+    height: 300px;
     background:
     linear-gradient(
           rgba(0, 0, 0, 0.1), 
           rgba(0, 0, 0, 0.1)
         ),
     url(images/jellyfishbackground.png);
+    background-repeat: no-repeat;
 }
 
 #factsection {
@@ -22,7 +18,7 @@
     height: 60%;
     display: flex;
     align-items: center;
-    padding: 20px 5px 20px 5px;
+    padding: 5px 5px 0px 5px;
 }
 #icon {
     width: 15%;
@@ -35,27 +31,29 @@
     width: 80%;
     height: 70%;
     text-align: center;
-    padding: 10px 20px 30px 20px;
+    padding: 10px 20px 15px 30px;
     background-image: url(images/jellyfishspeechbubble.png);
     background-repeat: no-repeat;
 }
+
 #heartbutton {
     position: absolute;
-    bottom: 150px;
+    bottom: 155px;
     right: 30px;
     padding: 0px;
     border: none;
     background: none;
 }
+#heartbutton:hover {-webkit-filter: brightness(110%); transform: scale(1.1);}
 
 #buttonsection {
     text-align: center;
     width: 100%;
-    padding: 2px;
+    padding-bottom: 10px;
 }
 #factbutton {
     width: 100px;
-    height: 30px;
+    height: 50px;
 }
 
 #favouritesection {
