@@ -1,6 +1,6 @@
 .container {
     padding: 5px;
-    margin: auto;
+    margin: 0px;
     display: flex;
     flex-wrap: wrap;
     height: 300px;
@@ -18,13 +18,13 @@
     height: 60%;
     display: flex;
     align-items: center;
-    padding: 5px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
 }
 #icon {
     width: 15%;
     height: 80%;
     align-items: center;
-    padding-top: 70px;
+    margin-top: 90px;
 }
 #factbox {
     margin-left: auto;
@@ -38,7 +38,7 @@
 
 #heartbutton {
     position: absolute;
-    bottom: 155px;
+    bottom: 160px;
     right: 30px;
     padding: 0px;
     border: none;
@@ -53,7 +53,7 @@
 }
 #factbutton {
     width: 100px;
-    height: 50px;
+    height: 45px;
 }
 
 #favouritesection {
@@ -61,7 +61,19 @@
     overflow: auto;
     text-align: center;
     font-size: small;
-    background-color: cadetblue;
-    height: 42px;
-    padding: 5px;
+    height: 50px;
+    padding: 5px 5px 5px 20px;
+    margin: 0px;
+    background-image: url(images/jellyfishfactborder.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+::-webkit-scrollbar-button:start:increment {
+    height: 20%;
+}
+::-webkit-scrollbar-button:end:increment {
+  height: 20%;
+  display: block;
+  background: transparent;
 }
