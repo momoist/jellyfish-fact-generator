@@ -4,6 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     height: 300px;
+    color: #2D2959;
     background:
     linear-gradient(
           rgba(0, 0, 0, 0.1), 
@@ -53,27 +54,41 @@
 }
 #factbutton {
     width: 100px;
-    height: 45px;
+    height: 50px;
+    border: none;
+    background: none;
+    background-image: url(images/jellyfishbuttonclosed.png);
+    background-repeat: no-repeat;
 }
+#factbutton:hover {background-image: url(images/jellyfishbuttonopen.png); transform: scale(1.1);}
 
 #favouritesection {
     width: 100%;
     overflow: auto;
     text-align: center;
     font-size: small;
-    height: 50px;
+    height: 38px;
     padding: 5px 5px 5px 20px;
     margin: 0px;
-    background-image: url(images/jellyfishfactborder.png);
+    /*background-image: url(images/jellyfishfactborder.png);
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: bottom;*/
 }
 
-::-webkit-scrollbar-button:start:increment {
-    height: 20%;
+::-webkit-scrollbar {
+    background-color: rgba(253, 171, 127, 0.85);
+    width: 15px;
 }
-::-webkit-scrollbar-button:end:increment {
-  height: 20%;
-  display: block;
-  background: transparent;
+::-webkit-scrollbar-thumb {
+    background-color: #FF8896;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url(images/jellyfishup.png);
+    background-size: 15px;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url(images/jellyfishdown.png);
+    background-size: 15px;
 }

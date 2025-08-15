@@ -26,10 +26,10 @@
             </div>
         </div>
         <div id="buttonsection">
-            <button id="factbutton" onclick="changefact()">click me!</button>
+            <button id="factbutton" onclick="changefact()"></button>
         </div>
         <div id="favouritesection">
-          <p id="favouritetitle">Favourites</p>
+          <p id="favouritetitle"></p>
           <p id="favouritelist"></p>
         </div>
     </div>
@@ -48,15 +48,24 @@
     fact1 = new Fact("Jellyfish have been around for over 500 million years.", "Jellyfish Age");
     fact2 = new Fact("Jellyfish are 95% water!", "Jellyfish Water");
     fact3 = new Fact("Jellyfish bodies are made up of only 3 layers - the outer epidermis, the mesoglea (gelatinous layer in the middle), and the inner gastrodermis (lines the gut cavity). This means they have no brains, hearts, or lungs!", "Jellyfish Bodies");
-    fact4 = new Fact("Instead of bones, jellyfish have bells with fluid and muscles.", "Jellyfish bones")
+    fact4 = new Fact("Instead of bones, jellyfish have bells with fluid and muscles.", "Jellyfish Bones")
     fact5 = new Fact("When jellyfish want to move, they squirt water in the opposite direction they want to go in to propel themselves. Of course, it's much easier to drift with the ocean's currents.", "Jellyfish Movements");
     fact6 = new Fact("The largest species of jellyfish is called the lion's mane, which can have tentacles as long as 36 meters!", "Lion's Mane");
     fact7 = new Fact("The immortal jellyfish (Turritopsis Dohrnii) can drop to the seabed if it's injured or in water that's the wrong temperature and become a baby jellyfish again!", "Immortal Jellyfish");
     fact8 = new Fact("Jellyfish begin as a polyp, then grow into an ephyra, and finally into an adult medusa.", "Jellyfish Life Stages");
     fact9 = new Fact("Box jellyfish are different to other jellyfish types in that they have eyes that can see (instead of just sensing light). In fact, with their 24 eyes, they have 360 degree vision!", "Box Jellyfish");
     fact10 = new Fact("Jellyfish are part of the phylum Cnidaria alongside species such as corals and sea anemones.", "Jellyfish Phylum");
+    fact11 = new Fact("The Moon Jelly does not have long stinging tentacles unlike many other types of jellyfish.", "Moon Jellyfish");
+    fact12 = new Fact("The Australian box jellyfish's venom is so dangerous it can cause cardiac arrest and even death in humans.", "Australian Box Jellyfish");
+    fact13 = new Fact("Most jellyfish only live for around a year, but some only live for a couple of days.", "Jellyfish Life Span");
+    fact14 = new Fact("When jellyfish get ill, their bell can invert. This is often fatal for the jellyfish :(", "Jellyfish Illness");
+    fact15 = new Fact("GFP, or green fluorescent protein, commonly used in biology, was first found in jellyfish.", "GFP");
+    fact16 = new Fact("A group of jellyfish is called a smack!", "Group of Jellyfish");
+    fact17 = new Fact("Box Jellyfish have 24 eyes! Found on each 'side' of the box, they are well-developed and some are lensed like ours.", "Box Jellyfish Eyes");
+    fact18 = new Fact("Jellyfish were the ones that invented mucus!", "Mucus");
 
-    const jellyfishfacts = [fact1, fact2, fact3, fact4, fact5, fact6, fact7, fact8, fact9, fact10];
+
+    const jellyfishfacts = [fact1, fact2, fact3, fact4, fact5, fact6, fact7, fact8, fact9, fact10, fact11, fact12, fact13, fact14, fact15, fact16, fact17, fact18];
     let factchoice = Math.floor(Math.random() * jellyfishfacts.length);
     let currentfact = jellyfishfacts[factchoice];
     document.getElementById("fact").innerHTML = currentfact.content;
@@ -104,10 +113,3 @@
 
 </script>
 </html>
-
-<!-- make the button generate randomly /
-    add heart emoji /
-    create list of favouritedfacts, add when heart emoji clicked, delete when heart emoji unclicked /
-    favourites button bottom right corner, click to reveal list of favourited facts
-    graphics
--->
